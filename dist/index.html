@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - S2-2.A14: 電影清單加碼功能</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <title>Movie List</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Movie List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favorite.html">Favorite</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- container用來存放搜尋欄位,模式切換按鈕,和電影清單  -->
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between">
+      <!-- Search Bar -->
+      <form class="form-inline col-sm-11" id="search-form">
+        <label class="visually-hidden" for="search-input">Search Keyword</label>
+        <input type="text" class="form-control mb-2 mr-sm-2 w-25" id="search-input" placeholder="Keyword...">
+        <button type="submit" class="btn btn-primary mb-2" id="search-submit-button">Search</button>
+      </form>
+      <!-- 新增切換'卡片'及'列表'兩種模式的按鈕-->
+      <div class="d-flex justify-content-around col-sm-1" id="change-mode">
+        <i class="fa fa-th" id="card-mode-button" aria-hidden="true"></i>
+        <i class="fa fa-bars" id="list-mode-button" aria-hidden="true"></i>
+      </div>
+    </div>
+    <!-- movie list -->
+    <div class="row mt-2" id="data-panel" data-mode="card-mode">
+      <!-- 在此渲染電影清單 -->
+    </div>
+  </div>
+
+  <!-- paginator -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center" id="paginator">
+    </ul>
+  </nav>
+
+  <!-- Movie Modal -->
+  <div class="modal fade" id="movie-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="movie-modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="movie-modal-body">
+          <div class="row">
+            <div class="col-sm-8" id="movie-modal-image">
+              <img src="https://raw.githubusercontent.com/ALPHACamp/movie-list-api/master/public/posters/80PWnSTkygi3QWWmJ3hrAwqvLnO.jpg" alt="movie-poster" class="image-fuid">
+            </div>
+            <div class="col-sm-4">
+              <p><em id="movie-modal-date">release date: 2022/08/30</em></p>
+              <p id="movie-modal-description">This is a movie.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- index.js -->
+  <script src="./index.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
